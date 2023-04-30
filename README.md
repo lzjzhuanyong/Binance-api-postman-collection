@@ -9,7 +9,7 @@ Using this method could test the Binance Pay API on postman.
 
 - Click the `Import` button. On Postman for Mac, for example, the button is at the top left:
 
-<img src="https://user-images.githubusercontent.com/6247197/235359073-4fe423e3-fd0e-472a-b9f3-8b429c172b74.png" alt="image2" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/6247197/235359073-4fe423e3-fd0e-472a-b9f3-8b429c172b74.png" alt="image2" width="75%" height="75%">
 
 - On the `Import` pop-up page, select the `Folder` tab. Click the `Choose folder from your computer` button and choose the root folder of the downloaded repository.
 
@@ -22,7 +22,7 @@ Using this method could test the Binance Pay API on postman.
 - Select the `Environments` tab on the left, choose an environment, and set your Api Key and Secret Key by changing the `Current Value` column (see screenshot);
 (The `Timestamp`, `nonce`, `Signature`, `Initial Value` fields can be left empty as they’ll be automatically filled by Postman when sending a request.)
 
-<img src="https://user-images.githubusercontent.com/6247197/235367194-b5b634fc-c08f-4464-8b66-f54002d28ef3.png" alt="image3" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/6247197/235367194-b5b634fc-c08f-4464-8b66-f54002d28ef3.png" alt="image3" width="75%" height="75%">
 
 - Select your newly-added environment from the environment dropdown menu. On Mac, this is at top right, to the left of the eye icon.
 
