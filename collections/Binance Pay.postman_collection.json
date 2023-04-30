@@ -1,0 +1,427 @@
+{
+	"info": {
+		"_postman_id": "39d5467d-d2c1-45d0-9df3-dc8015e1afa3",
+		"name": "New Binance Pay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22635297"
+	},
+	"item": [
+		{
+			"name": "Create Order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Timestamp",
+						"value": "{{timestamp}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Nonce",
+						"value": "{{nonce}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Certificate-SN",
+						"value": "{{binance-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"env\" : {\n    \"terminalType\": \"APP\"\n  },\n  \"orderTags\": {\n    \"ifProfitSharing\": true\n  },\n  \"merchantTradeNo\": \"9825382937292\",\n  \"orderAmount\": 25.17,\n  \"currency\": \"BUSD\",\n  \"goods\" : {\n    \"goodsType\": \"01\",\n    \"goodsCategory\": \"D000\",\n    \"referenceGoodsId\": \"7876763A3B\",\n    \"goodsName\": \"Ice Cream\",\n    \"goodsDetail\": \"Greentea ice cream cone\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bpay.binanceapi.com/binancepay/openapi/v2/order",
+					"protocol": "https",
+					"host": [
+						"bpay",
+						"binanceapi",
+						"com"
+					],
+					"path": [
+						"binancepay",
+						"openapi",
+						"v2",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wallet Balance Query V2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Timestamp",
+						"value": "{{timestamp}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Nonce",
+						"value": "{{nonce}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Certificate-SN",
+						"value": "{{binance-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"wallet\": \"SPOT_WALLET\",\n    \"currency\": \"BUSD\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/binancepay/openapi/v2/balance",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"binancepay",
+						"openapi",
+						"v2",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Timestamp",
+						"value": "{{timestamp}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Nonce",
+						"value": "{{nonce}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Certificate-SN",
+						"value": "{{binance-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/binancepay/openapi/v2/order/query",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"binancepay",
+						"openapi",
+						"v2",
+						"order",
+						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Close Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Timestamp",
+						"value": "{{timestamp}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Nonce",
+						"value": "{{nonce}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Certificate-SN",
+						"value": "{{binance-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"merchantTradeNo\": \"9825382937292\",\n  \"prepayId\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/binancepay/openapi/order/close",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"binancepay",
+						"openapi",
+						"order",
+						"close"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refund Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Timestamp",
+						"value": "{{timestamp}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Nonce",
+						"value": "{{nonce}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Certificate-SN",
+						"value": "{{binance-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/binancepay/openapi/order/refund",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"binancepay",
+						"openapi",
+						"order",
+						"refund"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query Refund",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Timestamp",
+						"value": "{{timestamp}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Nonce",
+						"value": "{{nonce}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Certificate-SN",
+						"value": "{{binance-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/binancepay/openapi/order/refund/query",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"binancepay",
+						"openapi",
+						"order",
+						"refund",
+						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Payer Verification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Timestamp",
+						"value": "{{timestamp}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Nonce",
+						"value": "{{nonce}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Certificate-SN",
+						"value": "{{binance-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "BinancePay-Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerType\":\"INDIVIDUAL\",\n    \"userId\":\"354205155\",\n    \"information\":[\n      {\n        \"category\":\"FIRST_NAME\",\n        \"value\":\"binance\"\n      },\n      {\n        \"category\":\"LAST_NAME\",\n        \"value\":\"pay\"\n      }\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/binancepay/openapi/order/payer/verification",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"binancepay",
+						"openapi",
+						"order",
+						"payer",
+						"verification"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const ts  = Date.now();",
+					"pm.environment.set(\"timestamp\", ts);",
+					"",
+					"const binance_api_secret = pm.environment.get(\"binance-api-secret\");",
+					"",
+					"let requestBody = \"\";",
+					"console.log(pm.request.body.raw)",
+					"if(pm.request.body.raw){",
+					"    requestBody = pm.request.body.raw.toString();",
+					"}",
+					"",
+					"",
+					"const nonce = randomString();",
+					"pm.environment.set(\"nonce\", nonce);",
+					"",
+					"const payload = ts + \"\\n\" + nonce + \"\\n\" + requestBody + \"\\n\";",
+					"",
+					"console.log(payload)",
+					"",
+					"if (binance_api_secret) {",
+					"    const signature = CryptoJS.HmacSHA512(payload, binance_api_secret).toString().toUpperCase();",
+					"    pm.environment.set(\"signature\", signature);",
+					"}",
+					"",
+					"function randomString(k){",
+					"    k = k || 32;",
+					"    let characters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+					"    let c ='';",
+					"    for(let i=0; i<k; i++){",
+					"        c += characters.charAt(Math.floor(Math.random()*characters.length))",
+					"    }",
+					"    return c;",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
