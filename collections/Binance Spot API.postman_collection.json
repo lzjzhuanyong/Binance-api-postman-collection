@@ -12021,6 +12021,689 @@
 						"description": "Weight(IP): 1"
 					},
 					"response": []
+				},
+				{
+					"name": "Subscribe ETH Staking(TRADE)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/eth/stake?amount&recvWindow&timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"eth",
+								"stake"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": null,
+									"description": "Amount in ETH, limit 4 decimals"
+								},
+								{
+									"key": "recvWindow",
+									"value": null
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Redeem ETH (TRADE)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/eth/redeem?amount=&recvWindow&timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"eth",
+								"redeem"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "",
+									"description": "Amount in BETH, limit 8 decimals"
+								},
+								{
+									"key": "recvWindow",
+									"value": null
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ETH staking history (USER_DATA)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/eth/history/stakingHistory?startTime&endTime&current&size&recvWindow&timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"eth",
+								"history",
+								"stakingHistory"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": null
+								},
+								{
+									"key": "endTime",
+									"value": null
+								},
+								{
+									"key": "current",
+									"value": null,
+									"description": "Currently querying page. Start from 1. Default: 1"
+								},
+								{
+									"key": "size",
+									"value": null,
+									"description": "Default: 10, Max: 100"
+								},
+								{
+									"key": "recvWindow",
+									"value": null
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ETH redemption history (USER_DATA)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/eth/history/redemptionHistory?startTime&endTime&current&size&recvWindow&timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"eth",
+								"history",
+								"redemptionHistory"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": null
+								},
+								{
+									"key": "endTime",
+									"value": null
+								},
+								{
+									"key": "current",
+									"value": null,
+									"description": "Currently querying page. Start from 1. Default: 1"
+								},
+								{
+									"key": "size",
+									"value": null,
+									"description": "Default: 10, Max: 100"
+								},
+								{
+									"key": "recvWindow",
+									"value": null
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ETH rewards distribution history (USER_DATA)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/eth/history/rewardsHistory?startTime&endTime&current&size&recvWindow&timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"eth",
+								"history",
+								"rewardsHistory"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": null
+								},
+								{
+									"key": "endTime",
+									"value": null
+								},
+								{
+									"key": "current",
+									"value": null
+								},
+								{
+									"key": "size",
+									"value": null
+								},
+								{
+									"key": "recvWindow",
+									"value": null
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get current ETH staking quota (USER_DATA)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/eth/quota?timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"eth",
+								"quota"
+							],
+							"query": [
+								{
+									"key": "recvWindow",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get BETH Rate History (USER_DATA)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/eth/history/rateHistory?startTime&endTime&current&size&recvWindow&timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"eth",
+								"history",
+								"rateHistory"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": null
+								},
+								{
+									"key": "endTime",
+									"value": null
+								},
+								{
+									"key": "current",
+									"value": null,
+									"description": "Currently querying page. Start from 1. Default:1"
+								},
+								{
+									"key": "size",
+									"value": null,
+									"description": "Default:10, Max:100"
+								},
+								{
+									"key": "recvWindow",
+									"value": null
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ETH Staking account (USER_DATA)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/account?recvWindow&timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"account"
+							],
+							"query": [
+								{
+									"key": "recvWindow",
+									"value": null
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wrap BETH(TRADE)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/wbeth/wrap?amount=&recvWindow&timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"wbeth",
+								"wrap"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "",
+									"description": "Amount in BETH, limit 4 decimals"
+								},
+								{
+									"key": "recvWindow",
+									"value": null
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unwrap WBETH(TRADE)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/wbeth/unwrap?amount=&recvWindow&timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"wbeth",
+								"unwrap"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": ""
+								},
+								{
+									"key": "recvWindow",
+									"value": null
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get WBETH wrap history (USER_DATA)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/wbeth/history/wrapHistory?startTime&endTime&current&size&recvWindow&timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"wbeth",
+								"history",
+								"wrapHistory"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": null
+								},
+								{
+									"key": "endTime",
+									"value": null
+								},
+								{
+									"key": "current",
+									"value": null,
+									"description": "Currently querying page. Start from 1. Default:1"
+								},
+								{
+									"key": "size",
+									"value": null,
+									"description": "Default:10, Max:100"
+								},
+								{
+									"key": "recvWindow",
+									"value": null
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get WBETH unwrap history (USER_DATA)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "X-MBX-APIKEY",
+								"value": "{{binance-api-key}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sapi/v1/eth-staking/wbeth/history/unwrapHistory?startTime&endTime&current&size&recvWindow&timestamp={{timestamp}}&signature={{signature}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sapi",
+								"v1",
+								"eth-staking",
+								"wbeth",
+								"history",
+								"unwrapHistory"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": null
+								},
+								{
+									"key": "endTime",
+									"value": null
+								},
+								{
+									"key": "current",
+									"value": null,
+									"description": "Currently querying page. Start from 1. Default:1"
+								},
+								{
+									"key": "size",
+									"value": null,
+									"description": "Default:10, Max:100"
+								},
+								{
+									"key": "recvWindow",
+									"value": null
+								},
+								{
+									"key": "timestamp",
+									"value": "{{timestamp}}"
+								},
+								{
+									"key": "signature",
+									"value": "{{signature}}"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
